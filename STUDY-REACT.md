@@ -47,8 +47,13 @@ src/
   ├── utils/                     # 날짜, 숫자, 포맷
   ├── assets/                    # 이미지, CSS
   └── config/                    # 환경 변수, 상수
-  
+
 ```
+
+**주요 파일:**
+- [App.tsx](src/App.tsx) - 메인 애플리케이션 진입점
+- [index.tsx](src/index.tsx) - React 앱 렌더링
+- [App.test.tsx](src/App.test.tsx) - App 컴포넌트 테스트
 
 
 ### MUI library 설치
@@ -57,9 +62,9 @@ npm install @mui/material @emotion/react @emotion/styled
 ```
 
 ### React App  만들기
-- LoginView.tsx : 로그인 UI 작성. MUI를 사용하여, 간단히 작성
-- LoginContainer.tsx : bizLogic추가 - LoginView를 import하고, id/pwd입력 및 로그인 버튼 handler 연결.
-- App.tsx : LoginContainer를 import 하기
+- [LoginView.tsx](src/features/login/view/LoginView.tsx) : 로그인 UI 작성. MUI를 사용하여, 간단히 작성
+- [LoginContainer.tsx](src/features/login/container/LoginContainer.tsx) : bizLogic추가 - LoginView를 import하고, id/pwd입력 및 로그인 버튼 handler 연결.
+- [App.tsx](src/App.tsx) : LoginContainer를 import 하기
 
 ### React App 실행
 ```
