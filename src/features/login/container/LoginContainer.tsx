@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginView from '../view/LoginView';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../../contexts/AuthContext';
 
 const LoginContainer: React.FC = () => {
   const [email, setEmail] = useState<string>('');

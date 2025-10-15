@@ -3,7 +3,7 @@ import { Box, Toolbar } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Layout: React.FC = () => {
   const { user, logout } = useAuth();
