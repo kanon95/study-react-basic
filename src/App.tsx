@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import { LoginContainer } from './features/login';
+import AppRouter from './routes/AppRouter';
 
 function App() {
-  return (
-    <LoginContainer />
-  );
+  return <AppRouter />;
 }
 
 export default App;

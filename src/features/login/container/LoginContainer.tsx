@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginView from '../view/LoginView';
+import { useAuth } from '../../../hooks/useAuth';
 
 const LoginContainer: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleEmailChange = (value: string) => {
     setEmail(value);
@@ -36,11 +41,14 @@ const LoginContainer: React.FC = () => {
       // 임시 로그인 로직 (테스트용)
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      console.log('로그인 시도:', { email, password });
+      // 이메일에서 이름 추출 (임시)
+      const name = email.split('@')[0];
 
-      // 성공 시 처리
-      // 예: 토큰 저장, 리다이렉트 등
-      alert('로그인 성공!');
+      // 로그인 처리
+      login(email, name);
+
+      // 대시보드로 이동
+      navigate('/dashboard');
 
     } catch (err) {
       setError('로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.');
